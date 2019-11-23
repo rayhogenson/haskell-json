@@ -43,8 +43,7 @@ charP x = Parser f
   where
     f (y:ys)
       | y == x = Just (ys, x)
-      | otherwise = Nothing
-    f [] = Nothing
+    f _ = Nothing
 
 stringP :: String -> Parser String
 stringP = traverse charP
